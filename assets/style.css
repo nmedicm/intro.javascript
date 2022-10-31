@@ -1,0 +1,43 @@
+body{
+    background-color: white;
+}
+
+.container{
+    display: flex;
+    flex-direction: row; 
+}
+
+.card{
+    width: 20rem;
+    height: 25rem;
+    background-color:olivedrab;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border-style: double;
+    border-color: gray; 
+}
+
+.card h2{
+    display: inline;
+}
+
+.content{
+    display: inline;
+}
+
+.content {
+    margin-top: 7rem;
+    margin-left: 1rem;
+}
+
+img{
+    width: 15rem;
+}
+
+#circle{
+    background: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
