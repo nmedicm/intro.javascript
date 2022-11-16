@@ -10,18 +10,24 @@ const inputCantidadTotal = document.querySelector("#inputCantidadTotal")
 
 selector.addEventListener("change", () => {
     circle.style.backgroundColor = selector.value;
-    selector.value = "green"
-    inputValor.textContent = "400000";
-    selector.value = "silver"
-    inputValor.textContent = "450000";
-    selector.value = "blue"
-    inputValor.textContent = "500000";
- })   
-
+})   
 
 
 btnCalcular.addEventListener("click", () => {
-    inputTotal.textContent = (inputTextoCantidad.value * inputValor.textContent);
-    inputCantidadTotal.textContent = inputTextoCantidad.value;
-})
-
+    let quantity = Number(inputTextoCantidad.value);
+    let value = Number(inputValor.textContent);
+    if (quantity > 0) {
+      const total = quantity * value;
+      inputCantidadTotal.innerHTML = quantity;
+  
+      const inputValorUsd = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 0,
+      }).format(total);
+  
+      inputTotal.innerHTML = inputValorUsd;
+    } else {
+      alert("el valor ingresado no valido");
+    }
+  });
